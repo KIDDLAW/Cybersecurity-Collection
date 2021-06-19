@@ -22,13 +22,13 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly stable, in addition to restricting traffic to the network.
-Having load balancers ensures that a website is protected by spreading out the traffic amongst multiple servers. Having a jump box gives your environment security by only having one access point to it. So instead of trying to harden multiple machines a person can put all their energy into making one incredibly difficult to crack.
+Having load balancers ensures that a website is protected by spreading out the traffic amongst multiple servers. Having a jump box gives your environment security by only having one point of access. So instead of trying to harden multiple machines a person can put all their energy into making one incredibly difficult to crack.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system configuration.
 - Filebeat watches for log data on your system. It also has the ability
   to slow down the traffic it is sending logstash so it doesn’t
   overburden it.    
-- Metricbeat logs metrics on your system at a specific time
+- Metricbeat logs metrics on your system at a specific time.
 
 The configuration details of each machine may be found below.
 
@@ -59,8 +59,8 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- Once the automation is complete it is very easy to take down and relaunch the container.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because
+once the automation is complete it is very easy to take down and relaunch the container.
 
 The playbook implements the following tasks:
 - It specifies the group of machines that this play will run on a well as the admin.
@@ -81,6 +81,9 @@ This ELK server is configured to monitor the following machines:
 We have installed the following Beats on these machines:
 - Filebeat
 - Metricbeat
+The configuration files for both of these beats can be found at 
+(Beat_Config/Filebeat-config.yml)
+(Beat_Config/Metricbeat-config.yml)
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat collects log data of the system and forwards them to of elasticsearch. These logs could range from sudo commands to ssh.
@@ -91,7 +94,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the install-elk.yml file to /etc/ansible directory.
-- Update the hosts file to include the ip address of the machine you wish       to install the ELK server on. You are going to need to specify which group of hosts you are using with brackets []
+- Update the hosts file to include the ip address of the machine you wish to install the ELK server on. You are going to need to specify which group of hosts you are using with brackets []
 - Run the playbook, and navigate to ip address:5601/app/kibana to check that the installation worked as expected.
 
 Here are the commands that you would run to set up the ELK container.
