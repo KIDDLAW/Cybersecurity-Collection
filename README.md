@@ -1,5 +1,3 @@
-# The-Story-so-Far
-This is a collection of all the system administration activities that we have competed so far in class.
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.   
@@ -96,7 +94,7 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include the ip address of the machine you wish       to install the ELK server on. You are going to need to specify which group of hosts you are using with brackets []
 - Run the playbook, and navigate to ip address:5601/app/kibana to check that the installation worked as expected.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+Here are the commands that you would run to set up the ELK container.
 
 Run the playbook: ansible-playbook install-elk.yml
 
