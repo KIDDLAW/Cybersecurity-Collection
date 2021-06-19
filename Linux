@@ -1,3 +1,5 @@
+sys_info.sh
+
 #!/bin/bash
 
 #Check if script was run as root. Exit if false.
@@ -47,3 +49,22 @@ echo -e "\nexec Files:" >> $output
 echo $execs >> $output
 echo -e "\nTop 10 Processes" >> $output
 ps aux --sort -%mem | awk {'print $1, $2, $3, $4, $11'} | head >> $output
+
+
+cleanup.sh
+
+#!/bin/bash
+
+
+rm -rf /tmp/*
+
+rm -rf /var/tmp/*
+
+apt clean -y
+
+rm -rf /home/sysadmin/.cache/thumbnails
+rm -rf /home/instructor/.cache/thumbnails
+rm -rf /home/sutdent/.cache/thumbnails
+rm -rf /root/.cahce/thumbnails
+
+
